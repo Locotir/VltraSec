@@ -428,6 +428,7 @@ def run_client(host_or_domain, port_or_local_port, external_port=None, use_serve
         ssh_cmd = ["ssh", "-L", f"{local_port}:{domain}:{external_port}", "serveo.net"]
         with open("ssh_client_log.txt", "w") as log:
             ssh_process = subprocess.Popen(ssh_cmd, preexec_fn=os.setsid, stdin=subprocess.PIPE, stdout=log, stderr=log)
+            time.sleep(1) # Wait for conn establishment
         with print_lock:
             print(f"🖧 Using SSH Tunnel: {' '.join(ssh_cmd)}")
         connect_host = 'localhost'
