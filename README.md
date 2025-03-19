@@ -42,7 +42,7 @@ pip install -r requirements.txt
 
 ## Run with Serveo Tunneling
 ### Server
-```python3 -u -d stealth -p 8080 -u Alice```
+```python3 -u vltrasec.py -d stealth -p 8080 -u Alice```
 - ```-d stealth```: Creates a tunnel to stealth.serveo.net (custom subdomain)
 - ```-p 8080```: Local/Remote port for the server
 
