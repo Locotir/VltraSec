@@ -1,6 +1,8 @@
 # VltraSec
 Welcome to VltraSec, a robust and secure command-line chat application designed for encrypted communication between two parties. VltraSec leverages the Diffie-Hellman key exchange protocol to establish a shared secret key, ensuring that all messages and file transfers are encrypted end-to-end. Whether you're communicating directly over a local network or tunneling through a service like Serveo to bypass NAT restrictions, VltraSec provides a flexible and secure solution for private conversations.
 
+![image](https://github.com/user-attachments/assets/ae38ec31-832c-4456-b4d5-affec46f7066)
+
 # Introduction
 The application uses a two-round Diffie-Hellman key exchange to generate a shared secret, the second round being encrypted with ```c-lcrypt``` which is then used to encrypt all communications. 
 
@@ -21,7 +23,7 @@ Key highlights include:
 git clone https://github.com/Locotir/VltraSec
 cd VltraSec
 yay -S c-lcrypt || (git clone https://github.com/Locotir/C-LCRYPT && cd C-LCRYPT && $(sudo pacman -Syu gcc base-devel || sudo apt install build-essential libgomp1) && g++ -std=c++17 -O3 -pipe -flto=$(nproc) -funroll-loops -fomit-frame-pointer -fno-plt -ffast-math -o C-LCRYPT C-LCRYPT.cpp -fopenmp && sudo cp C-LCRYPT /usr/bin/c-lcrypt)
-which python >/dev/null || which pip >/dev/null || sudo pacman -S --needed python python-pip || (sudo apt update && sudo apt install -y python3 python3-pip) || (sudo apt update && sudo apt install -y python3 python3-pip)
+which python >/dev/null || which pip >/dev/null || sudo pacman -S --needed python python-pip || (sudo apt update && sudo apt install -y python3 python3-pip)
 pip install -r requirements.txt
 ```
 
