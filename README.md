@@ -27,6 +27,17 @@ pip install -r requirements.txt
 
 # How to use
 
+## Run with Serveo Tunneling
+### Server
+```python3 -u vltrasec.py -s -d stealth -p 8080 -u Alice```
+- ```-d stealth```: Creates a tunnel to stealth.serveo.net (custom subdomain)
+- ```-p 8080```: Local/Remote port for the server
+
+### Client
+```python3 -u vltrasec.py -c -d stealth -p 8081:8080 -u Bob```
+- ```-d stealth```: Connects to stealth.serveo.net (same server subdomain)
+- ```-p 8081:8080```: localPort:RemotePort 
+
 ## Run with Direct Connection
 ### Server
 ```python3 -u vltrasec.py -s -H 0.0.0.0 -p 8080 -u Alice```
@@ -39,18 +50,6 @@ pip install -r requirements.txt
 - ```-H 192.168.1.100```: Server's IP address
 - ```-p 8080```: Server's port.
 - ```-u Bob```: Sets the client username to "Bob" 
-
-## Run with Serveo Tunneling
-### Server
-```python3 -u vltrasec.py -d stealth -p 8080 -u Alice```
-- ```-d stealth```: Creates a tunnel to stealth.serveo.net (custom subdomain)
-- ```-p 8080```: Local/Remote port for the server
-
-### Client
-```python3 -u vltrasec.py -c -d stealth -p 8081:8080 -u Bob```
-- ```-d stealth```: Connects to stealth.serveo.net (same server subdomain)
-- ```-p 8081:8080```: localPort:RemotePort 
-
 
 ## Send File
 ```/send /path/to/file.txt```
