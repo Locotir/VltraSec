@@ -53,7 +53,7 @@ which gsocket >/dev/null || yay -S gsocket || /bin/bash -c "$(curl -fsSL gsocket
 - ```-X aes```: Uses AES-256 encryption :(aes/clcrypt)
 
 ### Client
-```vltrasec -c -p 8080 -u Bob -k mysecret -X clcrypt```
+```vltrasec -c -p 8080 -u Bob -k mysecret -X aes```
 - ```-c```: Assign client role
 - ```-p 8080```: Local/Remote port for the server
 - ```-k vltrasec```: Sets the secret for gsocket tunneling
