@@ -21,10 +21,12 @@ Key highlights include:
 ```
 git clone https://github.com/Locotir/VltraSec
 cd VltraSec
-which c-lcrypt || yay -S c-lcrypt || (git clone https://github.com/Locotir/C-LCRYPT && cd C-LCRYPT
-sudo pacman -Syu gcc base-devel gmp gmpxx openssl || sudo apt install build-essential libgomp1 libgmp-dev libssl-dev libpthread-stubs0-dev
-g++ -std=c++17 -O3 -pipe -flto=$(nproc) -funroll-loops -fomit-frame-pointer -fno-plt -ffast-math -o C-LCRYPT C-LCRYPT.cpp -fopenmp && sudo cp C-LCRYPT /usr/bin/c-lcrypt)
-which gsocket >/dev/null || yay -S gsocket || /bin/bash -c "$(curl -fsSL gsocket.io/install.sh)"
+which c-lcrypt >/dev/null || yay -S c-lcrypt || { git clone https://github.com/Locotir/C-LCRYPT && cd C-LCRYPT; }
+which c-lcrypt >/dev/null || sudo pacman -Syu gcc base-devel gmp gmpxx openssl || sudo apt install build-essential libgomp1 libgmp-dev libssl-dev libpthread-stubs0-dev
+which c-lcrypt >/dev/null || { g++ -std=c++17 -O3 -pipe -flto=$(nproc) -funroll-loops -fomit-frame-pointer -fno-plt -ffast-math -o C-LCRYPT C-LCRYPT.cpp -fopenmp && sudo cp C-LCRYPT /usr/bin/c-lcrypt; }
+which gsocket >/dev/null  || yay -S gsocket || /bin/bash -c "$(curl -fsSL gsocket.io/install.sh)"
+g++ -std=c++17 -o vltrasec vltrasec.cpp -lgmp -lgmpxx -lcrypto -lpthread
+sudo cp vltrasec /usr/bin/vltrasec
 ```
 
 # How to use
@@ -81,4 +83,4 @@ which gsocket >/dev/null || yay -S gsocket || /bin/bash -c "$(curl -fsSL gsocket
 
 - ```/send```: Specify file path
 
-![direct_demo](https://github.com/user-attachments/assets/0df18740-a361-49dc-9bc8-43f15c9fedee)
+![image](https://github.com/user-attachments/assets/c3fc87f3-a92b-4ad2-a1e9-7e5a55aa9c42)
